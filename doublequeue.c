@@ -20,7 +20,7 @@ void insertf(int ele)
            }
          q[f]=ele;
          t++; 
-         printf("%d\t%d",f,t);
+         display1();
         }  
      }
 int deletef() 
@@ -41,7 +41,8 @@ int deletef()
             f=(f+1)%size;
             return (ele);
            }    
-        }  
+        } 
+        display1(); 
        return 0; 
      }
 void insertr(int ele) 
@@ -55,6 +56,7 @@ void insertr(int ele)
          r=(r+1)%size;
          q[r]=ele;
          t++;
+         display1();
         }   
      }
 int deleter() 
@@ -79,14 +81,14 @@ int deleter()
               r--; 
               return (ele);
              } 
-           }    
+           }  
         }  
        return 0; 
      }     
 int display1()
    { int c=1;
       for(int j=f;c<=t;j=(j+1)%size,c++)
-         printf("%d\n",q[j]);
+         printf("%d\t",q[j]);
  
       return 0;
    }       
@@ -107,6 +109,7 @@ void main()
                    ele=deletef();
                    if(ele!=-20)
                    printf("The element is:%d\n",ele);
+                   display1();
                  break;
          case 3: printf("Enter the element to be pushed:");
                  scanf("%d",&ele);
@@ -114,6 +117,7 @@ void main()
                  break;
          case 4: ele=deleter();
                   printf("The element is:%d\n",ele);
+                  display1();
                  break;
          case 5: display1();
                  break;
@@ -121,28 +125,5 @@ void main()
                  break;
          default: printf("\nInvalid choice!!!\n");
         }
-      }while(ch!=7);
+      }while(ch!=6);
    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                     
